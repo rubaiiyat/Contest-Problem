@@ -8,7 +8,6 @@ int main()
 {
     optimize();
 
-
     int t;
     cin>>t;
 
@@ -17,20 +16,33 @@ int main()
         int n;
         cin>>n;
 
-        vector <int> v(n);
-        map <int,int> mp;
+        int arr[n];
         for (int i = 0; i < n; i++)
         {
-            cin>>v[i];
-            mp[v[i]]++;
+            cin>>arr[i];
         }
 
-        for (auto m:mp){
+        int cnt=0;
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = i+1; j < n; j++)
+            {
+                if(arr[i]>arr[j]){
+                    swap(arr[i],arr[j]);
+                    cnt++;
+                }
+            }
             
         }
+
+        cout<<"Optimal train swapping takes "<<cnt<<" swaps."<<endl;
+        cnt=0;
+
+
         
         
     }
+    
     
 
 

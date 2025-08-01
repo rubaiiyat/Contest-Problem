@@ -17,16 +17,15 @@ int main()
         y++;
         string s=to_string(y);
         set <char> st;
-        for (int i = 0; i < s.length(); i++)
-        {
-            st.insert(s[i]);
+
+        for(auto s:s){
+            st.insert(s);
         }
 
-        if(st.size()==4){
+        if(st.size()==s.size()){
             cout<<s<<endl;
             break;
         }
-        
     }
     
 
